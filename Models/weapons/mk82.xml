@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+
+  <path>Aircraft/Hawk/Models/weapons/MK-82-LD.ac</path>
+
+  <animation>
+    <object-name>mk82</object-name>
+  </animation>
+
+</PropertyList>

@@ -1,0 +1,77 @@
+<PropertyList>
+
+<model>
+<path>Aircraft/Hawk/Models/cockpit.ac</path>
+</model>
+
+<model>
+<path>Aircraft/Hawk/Instruments/t45-Instruments.xml</path>
+</model>
+
+<model>
+<path>Aircraft/Hawk/Models/InstrucJS.xml</path>
+ <offsets>
+  <pitch-deg>0</pitch-deg>
+  <heading-deg>0</heading-deg>
+  <roll-deg>0</roll-deg>
+  <x-m>4.134</x-m>
+  <y-m>0</y-m>
+  <z-m>0.384</z-m>
+ </offsets>
+</model>
+
+<model>
+<path>Aircraft/Hawk/Models/TrainerJS.xml</path>
+ <offsets>
+  <pitch-deg>0</pitch-deg>
+  <heading-deg>0</heading-deg>
+  <roll-deg>0</roll-deg>
+  <x-m>2.540</x-m>
+  <y-m>0</y-m>
+  <z-m>0.024</z-m>
+ </offsets>
+</model>
+
+<animation>
+ <type>translate</type>
+ <object-name>L.I.Pedal</object-name>
+ <object-name>L.T.Pedal</object-name>
+ <property>controls/flight/rudder</property>
+ <factor>0.05</factor>
+ <axis>
+  <x>1</x>
+  <y>0</y>
+  <z>0</z>
+ </axis>
+</animation>
+
+<animation>
+ <type>translate</type>
+ <object-name>R.I.Pedal</object-name>
+ <object-name>R.T.Pedal</object-name>
+ <property>controls/flight/rudder</property>
+ <factor>0.05</factor>
+ <axis>
+  <x>-1</x>
+  <y>0</y>
+  <z>0</z>
+ </axis>
+</animation>
+
+<animation>
+ <type>translate</type>
+ <object-name>T.Throttle</object-name>
+ <object-name>I.Throttle</object-name>
+ <property>controls/engines/engine/throttle</property>
+ <interpolation>
+  <entry><ind>1</ind><dep>-0.049</dep></entry>
+  <entry><ind>0</ind><dep>0.049</dep></entry>
+ </interpolation>
+ <axis>
+  <x>1</x>
+  <y>0</y>
+  <z>0</z>
+ </axis>
+</animation>
+
+</PropertyList>

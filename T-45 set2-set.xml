@@ -1,0 +1,451 @@
+<?xml version="1.0"?>
+<!-- BAE Hawk -->
+
+<PropertyList>
+ <sim>
+
+  <description>T-45C Instructor (YASim)</description>
+  <author>Daniel "Intel-Qube" Strawn, StuartC</author>
+<aircraft-version>0.1</aircraft-version>
+    <status>0.1 BETA</status>
+<flight-model>yasim</flight-model>
+
+
+<status>0.9 Beta</status>
+<systems>
+      <electrical>
+        <path>Aircraft/Generic/generic-electrical.xml</path>
+      </electrical>
+      <autopilot>
+        <path>Aircraft/Hawk/systems/hawk-autopilot.xml</path>
+      </autopilot>
+    </systems>
+<model>
+<path>Aircraft/Hawk/Models/T-45.xml</path>
+</model>
+
+ <startup>
+  <splash-texture>Aircraft/Hawk/t45_splash.png</splash-texture> 
+  </startup>
+
+  <virtual-cockpit archive="y">false</virtual-cockpit>
+
+  <view n="0">
+	<name>Instructor View</name>
+	<internal archive="y">true</internal>
+	<type>lookfrom</type>
+	<config>
+		<from-model type="bool">true</from-model>
+		<from-model-idx type="int">0</from-model-idx>
+		<x-offset-m archive="y">0</x-offset-m>
+		<y-offset-m archive="y">1.35</y-offset-m>
+		<z-offset-m archive="y">-1.93</z-offset-m>
+		<pitch-offset-deg>-10</pitch-offset-deg>
+		<default-field-of-view-deg>55.0</default-field-of-view-deg>
+	</config>
+ 
+</view>
+ 
+  <view n="100">
+   <internal archive="y">true</internal>
+   <config>
+    <x-offset-m archive="y">0</x-offset-m>
+    <y-offset-m archive="y">0.88</y-offset-m>
+    <z-offset-m archive="y">-3.35</z-offset-m>
+    <pitch-offset-deg>-14</pitch-offset-deg>
+    <default-field-of-view-deg>86.3</default-field-of-view-deg>
+   </config>
+  </view>
+  <current-view>
+    <field-of-view>60.0</field-of-view>
+  </current-view>
+
+
+  
+  <fuel-fraction>1.0</fuel-fraction>
+
+  <sound>
+   <path>Aircraft/Hawk/hawk-sound.xml</path>
+  </sound>
+
+  <panel>
+    <visibility>false</visibility>
+  </panel>
+
+<engines>
+<engine n="0">
+<running>true</running>
+</engine>
+</engines>
+
+  <aoa-indexer>
+   <too-slow-deg>15.0</too-slow-deg>
+   <slow-deg>14.0</slow-deg>
+   <fast-deg>13.0</fast-deg>
+   <too-fast-deg>12.0</too-fast-deg>
+  </aoa-indexer>
+
+  <hud>
+   <enable3d>true</enable3d>
+  </hud>
+
+  <help>
+   <title>T-45 Goshawk</title>
+   <key>
+     <name>C</name>
+     <desc>Catapult Launch</desc>
+   </key>
+   <key>
+     <name>L</name>
+     <desc>Carrier launch-bar engage</desc>
+   </key>
+   <key>
+     <name>o/O</name>
+     <desc>Arresting Hook up/down</desc>
+   </key>
+   <key>
+     <name>Ctrl+b</name>
+     <desc>Airbrake Toggle</desc>
+   </key>
+	<line>Note: the flaps should only really be used for 
+carrier landings and take-offs only. 
+Conventional landing and take-off shouldn't require flaps.</line>
+	<line></line>
+	<line>Carrier Landing:</line>
+	<line>Extend the flaps all the way and lower your landing gear. 
+Beware the flaps will cause you to dive so keep your nose up. 
+Maintain full throttle.
+Lower the arresting hook and deploy the airbrake. 
+Your approach towards the carrier should be 15-20
+degress angle of attack and roughly 100kts airspeed. 
+Happy Flying.</line>
+  </help>
+
+<menubar>
+			<default>
+				<menu n="1000">
+					<label>T45C GossHawk</label>
+					<enabled type="bool">true</enabled>
+					<item>
+						<label>Select MP-pilot</label>
+						<binding>
+							<command>nasal</command>
+							<script>dual_control_tools.copilot_dialog.show(aircraft_dual_control.pilot_type)</script>
+						</binding>
+					</item>
+					<item>
+						<label>Toggle pilot model</label>
+						<binding>
+							<command>property-toggle</command>
+							<property>/sim/model/buccaneer/config/show-pilot</property>
+						</binding>
+					</item>
+					<item>
+						<label>Toggle G-induced head movement</label>
+						<binding>
+							<command>property-toggle</command>
+							<property>/sim/headshake/enabled</property>
+						</binding>
+					</item>
+				</menu>
+			</default>
+		</menubar>
+
+
+
+	<weight n="0">
+		<name>Pylon left 2</name>
+		<weight-lb>0</weight-lb>
+		<selected type="bool">true</selected>
+
+		<opt>
+			<name>none</name>
+			<lbs>0</lbs>
+		</opt>
+		
+		<opt>
+			<name>Mk 82</name>
+			<lbs>500.0</lbs>
+		</opt>
+			</weight>
+
+	<weight n="1">
+		<name>Pylon left 3</name>
+		<tank>4</tank>
+		<weight-lb>0</weight-lb>
+		<selected type="bool">true</selected>
+
+		<opt>
+			<name>none</name>
+			<lbs>0</lbs>
+		</opt>
+		<opt>
+			<name>1500 l Droptank</name>
+			<lbs>2645.0</lbs>
+			<gals>396</gals>
+		</opt>
+		<opt>
+			<name>1000 l Droptank</name>
+			<lbs>2204.0</lbs>
+			<gals>211</gals>
+		</opt>
+		
+		<opt>
+			<name>MK82</name>
+			<lbs>500.0</lbs>
+		</opt>
+
+</weight>
+			
+<weight n="2">
+		<name>Center</name>
+		<tank>5</tank>
+		<weight-lb>0</weight-lb>
+		<selected type="bool">true</selected>
+
+		<opt>
+			<name>none</name>
+			<lbs>0</lbs>
+		</opt>
+		<opt>
+			<name>1000 l Droptank</name>
+			<lbs>2204.0</lbs>
+			<gals>211</gals>
+		</opt>
+<opt>
+			<name>ADEN Cannon</name>
+			<lbs>187.392</lbs>
+			</opt>
+
+  </weight>
+	
+	<weight n="3">
+		<name>Pylon right 3</name>
+		<tank>6</tank>
+		<weight-lb>0</weight-lb>
+		<selected type="bool">true</selected>
+
+		<opt>
+			<name>none</name>
+			<lbs>0</lbs>
+		</opt>
+		<opt>
+			<name>1500 l Droptank</name>
+			<lbs>2645.0</lbs>
+			<gals>396</gals>
+		</opt>
+		<opt>
+			<name>1000 l Droptank</name>
+			<lbs>2204.0</lbs>
+			<gals>211</gals>
+		</opt>
+		
+		<opt>
+			<name>MK 82</name>
+			<lbs>500.0</lbs>
+		</opt>
+
+	</weight>
+	<weight n="4">
+		<name>Pylon right 2</name>
+		<weight-lb>0</weight-lb>
+		<selected type="bool">true</selected>
+
+		<opt>
+			<name>none</name>
+			<lbs>0</lbs>
+		</opt>
+		
+		<opt>
+			<name>Mk 82</name>
+			<lbs>500.0</lbs>
+		</opt>
+			</weight>
+
+	
+
+
+ </sim>
+
+<armament>
+			<station n="0">
+				<release type="bool">false</release>
+			</station>
+			<station n="1">
+				<release type="bool">false</release>
+			</station>
+			<station n="2">
+				<release type="bool">false</release>
+			</station>
+			<station n="3">
+				<release type="bool">false</release>
+			</station>
+			<station n="4">
+				<release type="bool">false</release>
+			</station>
+			
+			
+</armament>	
+
+
+<environment>
+    <turbulence>
+      <use-cloud-turbulence>true</use-cloud-turbulence>
+    </turbulence>
+  </environment>
+
+
+<controls>
+	<gear>
+	<brake-parking>0</brake-parking>
+	</gear>
+	<engines>
+	<engine>
+	<throttle>0</throttle>
+	</engine>
+	</engines>
+</controls>
+
+<consumables>
+<fuel>
+<tank n="0">
+        <tank-num type="int">0</tank-num>
+        <level-gal_us archive="y">1350</level-gal_us>
+      </tank>
+<tank n="1">
+        <tank-num type="int">1</tank-num>
+        <level-gal_us archive="y">1100</level-gal_us>
+      </tank>
+<tank n="2">
+        <tank-num type="int">2</tank-num>
+        <level-gal_us archive="y">200</level-gal_us>
+      </tank>
+<tank n="3">
+        <tank-num type="int">3</tank-num>
+        <level-gal_us archive="y">200</level-gal_us>
+      </tank>
+
+<tank n="4">
+        <name>centerline Droptank</name>
+        <selected type="bool">false</selected>
+      </tank>
+<tank n="5">
+        <name>left wing Droptank</name>
+        <selected type="bool">false</selected>
+      </tank>
+<tank n="6">
+        <name>right wing Droptank</name>
+        <selected type="bool">false</selected>
+      </tank>
+    </fuel>
+</consumables>
+
+<nasal>
+<T-45>
+    	<file>Aircraft/Hawk/Nasal/hawk.nas</file>
+<file>Aircraft/Hawk/Nasal/light.nas</file>
+    </T-45>
+<!-- Dual control. -->
+  <dual_control_tools>
+    <file>Aircraft/ZLT-NT/DualControl/dual-control-tools.nas</file>
+  </dual_control_tools>
+  <!-- Offending item <aircraft_dual_control> -->
+   <dual_control>
+   <file>Aircraft/ZLT-NT/DualControl/copilot-dual-control.nas</file>
+
+  </dual_control>
+
+  </nasal>
+
+
+ <input> 
+   <keyboard include="../../Input/Keyboard/carrier-bindings.xml"/>
+<input>
+		<keyboard>
+			<key n="22">
+				<name>Ctrl-V</name>
+				<desc>Select initial view ("Instructor View").</desc>
+				<binding>
+					<command>nasal</command>
+					<script>
+						setprop("/sim/current-view/view-number", view.indexof("Instructor View"));
+					</script>
+				</binding>
+			</key>
+ 
+			<!-- map keys for seat vertical adjust -->
+			<key n="21">
+				<name>CTRL-U</name>
+				<desc>Seat Default.</desc>
+				<binding>
+					<command>property-assign</command>
+					<property>/controls/seat/vertical-adjust</property>
+					<value type="double">0</value>
+				</binding>
+				<binding>
+					<condition>
+						<equals>
+							<property>/sim/current-view/name</property>
+							<value>Instructor View</value>
+						</equals>
+					</condition>
+					<command>property-assign</command>
+					<property>sim/current-view/y-offset-m</property>
+					<value type="double">1.30165</value>
+				</binding>
+			</key>
+			<key n="85">
+				<name>U</name>
+				<desc>Seat Down.</desc>
+				<binding>
+					<command>property-adjust</command>
+					<property>/controls/seat/vertical-adjust</property>
+					<step type="double">-0.01</step>
+					<min type="double">-0.05</min>
+					<max type="double">0.05</max>
+				</binding>
+				<binding>
+					<condition>
+						<equals>
+							<property>/sim/current-view/name</property>
+							<value>Instructor View</value>
+						</equals>
+					</condition>
+					<command>property-adjust</command>
+					<property>sim/current-view/y-offset-m</property>
+					<step type="double">-0.01</step>
+					<min type="double">1.25165</min>
+					<max type="double">1.35165</max>
+				</binding>
+			</key>
+			<key n="117">
+				<name>u</name>
+				<desc>Seat Up.</desc>
+				<binding>
+					<command>property-adjust</command>
+					<property>controls/seat/vertical-adjust</property>
+					<step type="double">0.01</step>
+					<min type="double">-0.05</min>
+					<max type="double">0.05</max>
+				</binding>
+				<binding>
+					<condition>
+						<equals>
+							<property>/sim/current-view/name</property>
+							<value>Back Seat View</value>
+						</equals>
+					</condition>
+					<command>property-adjust</command>
+					<property>sim/current-view/y-offset-m</property>
+					<step type="double">0.01</step>
+					<min type="double">1.25165</min>
+					<max type="double">1.35165</max>
+				</binding>
+			</key>
+		</keyboard>
+	
+ </input> 
+
+</PropertyList>
+
+

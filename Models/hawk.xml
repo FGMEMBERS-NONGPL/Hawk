@@ -1,0 +1,150 @@
+<PropertyList>
+
+<model>
+<path>Aircraft/Hawk/Models/hawk-anims.xml</path>
+<offsets>
+<pitch-deg>0</pitch-deg>   
+<heading-deg>0</heading-deg>
+<roll-deg>0</roll-deg>
+<x-m>-6.427</x-m>
+<y-m>0</y-m>
+<z-m>-0.1</z-m>
+</offsets>
+</model>
+<!-- Gauche -->
+  <model>
+    <path>Aircraft/Hawk/Models/Effects/smoke/smokeL.xml</path>
+    <offsets>
+      <x-m>  5.561 </x-m>
+      <y-m> 0</y-m>
+      <z-m> 0.5</z-m>
+    </offsets>
+  </model>
+
+
+ <!-- Gauche -->
+  <model>
+    <path>Aircraft/Hawk/Models/Effects/tiptrail/tiptrail.xml</path>
+    <offsets>
+      <x-m>  4.332 </x-m>
+      <y-m> -5.1 </y-m>
+      <z-m> 0</z-m>
+    </offsets>
+  </model>
+
+  <!-- Droite -->
+  <model>
+    <path>Aircraft/Hawk/Models/Effects/tiptrail/tiptrail.xml</path>
+    <offsets>
+      <x-m>  4.332 </x-m>
+      <y-m>  5.1</y-m>
+      <z-m>0</z-m>
+    </offsets>
+  </model>
+
+  <!-- Gauche -->
+  <model>
+    <path>Aircraft/Hawk/Models/Effects/trail/trailL.xml</path>
+    <offsets>
+      <x-m>  4.561 </x-m>
+      <y-m> 0</y-m>
+      <z-m> 0.5</z-m>
+    </offsets>
+  </model>
+
+  <!-- Droite -->
+  <model>
+    <path>Aircraft/Hawk/Models/Effects/trail/trailR.xml</path>
+    <offsets>
+      <x-m>  0.561 </x-m>
+      <y-m>  0.483 </y-m>
+      <z-m> 0.5</z-m>
+    </offsets>
+  </model>
+
+
+ <!-- Ajout des effets lumineux -->
+  <model>
+    <path>Aircraft/Hawk/Models/lights/beacon.xml</path>
+    <offsets>
+      <x-m> -0.55</x-m>
+      <y-m> 0.000 </y-m>
+      <z-m> 1.55</z-m>
+    </offsets>
+  </model>
+
+
+<model>
+    <path>Aircraft/Hawk/Models/lights/beacon.xml</path>
+    <offsets>
+      <x-m> -4.13</x-m>
+      <y-m> 0.000 </y-m>
+      <z-m> -0.45</z-m>
+    </offsets>
+  </model>
+
+
+
+  <model>
+    <path>Aircraft/Hawk/Models/lights/RedLight.xml</path>
+    <offsets>
+      <x-m>  0.55 </x-m>
+      <y-m> -4.7 </y-m>
+      <z-m> 0.2</z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Hawk/Models/lights/GreenLight.xml</path>
+    <offsets>
+      <x-m>  0.55 </x-m>
+      <y-m>  4.7 </y-m>
+      <z-m> 0.2</z-m>
+    </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Hawk/Models/lights/StrobeWhite.xml</path>
+    <offsets>
+      <x-m>  0.62 </x-m>
+      <y-m> -4.8 </y-m>
+      <z-m> 0.2</z-m>
+   </offsets>
+  </model>
+
+  <model>
+    <path>Aircraft/Hawk/Models/lights/StrobeWhite.xml</path>
+    <offsets>
+      <x-m>  0.62 </x-m>
+      <y-m>  4.8 </y-m>
+      <z-m> 0.2</z-m>
+
+    </offsets>
+  </model>
+
+<!-- External loads -->
+<model><path>Aircraft/Hawk/Models/weapons/loads.xml</path>
+<offsets>
+      <x-m> 0 </x-m>
+      <y-m> 0 </y-m>
+      <z-m> 0 </z-m>
+    </offsets>
+</model> 
+
+<model>
+    <path>Aircraft/Hawk/Models/Effects/guns/fire.xml</path>
+    <offsets>
+      <x-m> -1.364 </x-m>
+      <y-m> 1.47 </y-m>
+      <z-m> 0.35</z-m>
+      <roll-deg>    0 </roll-deg>
+      <pitch-deg> 180 </pitch-deg>
+      <heading-deg> 0 </heading-deg>
+    </offsets>
+  </model>
+
+
+
+
+  
+</PropertyList>

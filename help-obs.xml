@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<PropertyList>
+	<help>
+		<title>Hawk instructors aircraft</title>
+			<line>-----------------------------------------------------------</line>
+		<line> To use the Back Seat View select a Hawk pilot in the</line>
+		<line> Hawk->Select MP-Pilot dialog or set</line>
+		<line> /sim/remote/pilot-callsign to the Hawk/T45 Instructor</line>
+		<line> callsign you wish to link with. The other mulitplayer must</line>
+		<line> similarly select your multiplayer callsign to give you any control.</line>
+		<line> </line>
+		<line>-----------------------------------------------------------</line>
+
+	</help>
+</PropertyList>

@@ -1,0 +1,160 @@
+<?xml version="1.0"?>
+<!-- BAE Hawk -->
+
+<PropertyList>
+ <sim>
+
+  <description>T-45C Goshawk (YASim)</description>
+  <author>Daniel "Intel-Qube" Strawn, StuartC</author>
+
+<status>0.9 Beta</status>
+<systems>
+      <electrical>
+        <path>Aircraft/Generic/generic-electrical.xml</path>
+      </electrical>
+      <autopilot>
+        <path>Aircraft/Hawk/systems/hawk-autopilot.xml</path>
+      </autopilot>
+    </systems>
+<model>
+<path>Aircraft/Hawk/Models/T-45.xml</path>
+</model>
+
+ <startup>
+  <splash-texture>Aircraft/Hawk/t45_splash.png</splash-texture> 
+  </startup>
+
+  <virtual-cockpit archive="y">false</virtual-cockpit>
+
+  <view n="0">
+   <internal archive="y">true</internal>
+   <config>
+    <x-offset-m archive="y">0</x-offset-m>
+    <y-offset-m archive="y">0.88</y-offset-m>
+    <z-offset-m archive="y">-3.35</z-offset-m>
+    <pitch-offset-deg>-14</pitch-offset-deg>
+    <default-field-of-view-deg>86.3</default-field-of-view-deg>
+   </config>
+
+  </view>
+  <current-view>
+    <field-of-view>60.0</field-of-view>
+  </current-view>
+
+<view n="100">
+	<name>Instructor View</name>
+	<internal archive="y">true</internal>
+	<type>lookfrom</type>
+	<config>
+		<from-model type="bool">true</from-model>
+		<from-model-idx type="int">0</from-model-idx>
+		<x-offset-m archive="y">0</x-offset-m>
+		<y-offset-m archive="y">1.35</y-offset-m>
+		<z-offset-m archive="y">-1.93</z-offset-m>
+		<pitch-offset-deg>-10</pitch-offset-deg>
+		<default-field-of-view-deg>55.0</default-field-of-view-deg>
+	</config>
+</view>
+
+  <flight-model>yasim</flight-model>
+  <aero>T-45-yasim</aero>
+  <fuel-fraction>1.0</fuel-fraction>
+
+  <sound>
+   <path>Aircraft/Hawk/hawk-sound.xml</path>
+  </sound>
+
+  <panel>
+    <visibility>false</visibility>
+  </panel>
+
+<engines>
+<engine n="0">
+<running>true</running>
+</engine>
+</engines>
+
+  <aoa-indexer>
+   <too-slow-deg>15.0</too-slow-deg>
+   <slow-deg>14.0</slow-deg>
+   <fast-deg>13.0</fast-deg>
+   <too-fast-deg>12.0</too-fast-deg>
+  </aoa-indexer>
+
+  <hud>
+   <enable3d>true</enable3d>
+  </hud>
+
+  <help>
+   <title>T-45 Goshawk</title>
+   <key>
+     <name>C</name>
+     <desc>Catapult Launch</desc>
+   </key>
+   <key>
+     <name>L</name>
+     <desc>Carrier launch-bar engage</desc>
+   </key>
+   <key>
+     <name>o/O</name>
+     <desc>Arresting Hook up/down</desc>
+   </key>
+   <key>
+     <name>Ctrl+b</name>
+     <desc>Airbrake Toggle</desc>
+   </key>
+	<line>Note: the flaps should only really be used for 
+carrier landings and take-offs only. 
+Conventional landing and take-off shouldn't require flaps.</line>
+	<line></line>
+	<line>Carrier Landing:</line>
+	<line>Extend the flaps all the way and lower your landing gear. 
+Beware the flaps will cause you to dive so keep your nose up. 
+Maintain full throttle.
+Lower the arresting hook and deploy the airbrake. 
+Your approach towards the carrier should be 15-20
+degress angle of attack and roughly 100kts airspeed. 
+Happy Flying.</line>
+  </help>
+
+ </sim>
+
+<environment>
+    <turbulence>
+      <use-cloud-turbulence>true</use-cloud-turbulence>
+    </turbulence>
+  </environment>
+
+
+<controls>
+	<gear>
+	<brake-parking>0</brake-parking>
+	</gear>
+	<engines>
+	<engine>
+	<throttle>0</throttle>
+	</engine>
+	</engines>
+</controls>
+
+<consumables>
+<fuel>
+<tank n="0">
+<level-gal_us archive="y">15000</level-gal_us>
+</tank>
+</fuel>
+</consumables>
+
+<nasal>
+<T-45>
+    	<file>Aircraft/Hawk/Nasal/hawk.nas</file>
+<file>Aircraft/Hawk/Nasal/light.nas</file>
+    </T-45>
+  </nasal>
+
+
+ <input> 
+   <keyboard include="../../Input/Keyboard/carrier-bindings.xml"/>
+ </input> 
+
+</PropertyList>

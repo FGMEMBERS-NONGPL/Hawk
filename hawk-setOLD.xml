@@ -1,0 +1,368 @@
+<?xml version="1.0"?>
+<!-- BAE Hawk -->
+
+<PropertyList>
+ <sim>
+
+  <description>BAE Hawk T2(YASim).</description>
+  <author>Daniel "Intel-Qube" Strawn, StuartC</author>
+<aircraft-version>0.9</aircraft-version>
+    <status>0.9 BETA</status>
+
+
+<systems>
+      <electrical>
+        <path>Aircraft/Generic/generic-electrical.xml</path>
+      </electrical>
+      <autopilot>
+        <path>Aircraft/Hawk/systems/hawk-autopilot.xml</path>
+      </autopilot>
+    </systems>
+<model>
+<path>Aircraft/Hawk/Models/hawk.xml</path>
+</model>
+
+
+ <startup>
+  <splash-texture>Aircraft/Hawk/hawk_splash.png</splash-texture> 
+  </startup>
+
+  <virtual-cockpit archive="y">false</virtual-cockpit>
+
+  <view n="0">
+   <internal archive="y">true</internal>
+   <config>
+    <x-offset-m archive="y">0</x-offset-m>
+    <y-offset-m archive="y">0.88</y-offset-m>
+    <z-offset-m archive="y">-3.35</z-offset-m>
+    <pitch-offset-deg>-14</pitch-offset-deg>
+    <default-field-of-view-deg>86.3</default-field-of-view-deg>
+   </config>
+  </view>
+  <current-view>
+    <field-of-view>60.0</field-of-view>
+  </current-view>
+
+<view n="100">
+	<name>Instructor View</name>
+	<internal archive="y">true</internal>
+	<type>lookfrom</type>
+	<config>
+		<from-model type="bool">true</from-model>
+		<from-model-idx type="int">0</from-model-idx>
+		<x-offset-m archive="y">0</x-offset-m>
+		<y-offset-m archive="y">1.35</y-offset-m>
+		<z-offset-m archive="y">-1.93</z-offset-m>
+		<pitch-offset-deg>-10</pitch-offset-deg>
+		<default-field-of-view-deg>55.0</default-field-of-view-deg>
+	</config>
+
+</view>
+
+  <flight-model>yasim</flight-model>
+  <aero>hawk-yasim</aero>
+  <fuel-fraction>1.0</fuel-fraction>
+
+  <sound>
+   <path>Aircraft/hawk/hawk-sound.xml</path>
+  </sound>
+
+  <panel>
+    <visibility>false</visibility>
+  </panel>
+
+<engines>
+<engine n="0">
+<running>true</running>
+</engine>
+</engines>
+
+  <aoa-indexer>
+   <too-slow-deg>15.0</too-slow-deg>
+   <slow-deg>14.0</slow-deg>
+   <fast-deg>13.0</fast-deg>
+   <too-fast-deg>12.0</too-fast-deg>
+  </aoa-indexer>
+
+  <hud>
+   <enable3d>true</enable3d>
+  </hud>
+
+  <help>
+   <title>BAE Hawk</title>
+   <key>
+     <name>Ctrl+b</name>
+     <desc>Airbrake Toggle</desc>
+   </key>
+	<line>Take-Off:</line>
+	<line>Increase throttle to %100.
+You needn't use flaps on take off.
+Push up at 170-210kts.</line>
+	<line>Landing:</line>
+	<line>Extend flaps and reduced speed to about 120kts.
+Once you hit the run-way, reduce throttle completely,
+engage the wheel brakes and deploy the airbrake.
+</line>
+  </help>
+
+<menubar>
+			<default>
+				<menu n="1000">
+					<label>Hawk T2</label>
+					<enabled type="bool">true</enabled>
+					<item>
+						<label>Select MP-pilot</label>
+						<binding>
+							<command>nasal</command>
+							<script>dual_control_tools.copilot_dialog.show(aircraft_dual_control.pilot_type)</script>
+						</binding>
+					</item>
+					
+					
+				</menu>
+			</default>
+		</menubar>
+
+<armament>
+			<station n="0">
+				<release type="bool">false</release>
+			</station>
+			<station n="1">
+				<release type="bool">false</release>
+			</station>
+			<station n="2">
+				<release type="bool">false</release>
+			</station>
+			<station n="3">
+				<release type="bool">false</release>
+			</station>
+			<station n="4">
+				<release type="bool">false</release>
+			</station>
+			<station n="5">
+				<release type="bool">false</release>
+			</station>
+			<station n="6">
+				<release type="bool">false</release>
+			</station>
+			
+</armament>	
+
+<weight n="0">
+		<name>Pylon left 1</name>
+		<weight-lb>0</weight-lb>
+		<selected>none</selected>
+		<opt>
+			<name>none</name>
+			<lbs>0</lbs>
+		</opt>
+		<opt>
+			<name>AIM-9 Sidewinder</name>
+			<lbs>190.0</lbs>
+		</opt>
+		</weight>
+
+	<weight n="1">
+		<name>Pylon left 2</name>
+		<weight-lb>0</weight-lb>
+		<selected>none</selected>
+		<opt>
+			<name>none</name>
+			<lbs>0</lbs>
+		</opt>
+		<opt>
+			<name>AIM-9 Sidewinder</name>
+			<lbs>190.0</lbs>
+		</opt>
+		<opt>
+			<name>Mk 82</name>
+			<lbs>500.0</lbs>
+		</opt>
+			</weight>
+
+	<weight n="2">
+		<name>Pylon left 3</name>
+		<tank>5</tank>
+		<weight-lb>0</weight-lb>
+		<selected>none</selected>
+		<opt>
+			<name>none</name>
+			<lbs>0</lbs>
+		</opt>
+		<opt>
+			<name>1500 lt Droptank</name>
+			<lbs>2645.0</lbs>
+			<gals>396</gals>
+		</opt>
+		<opt>
+			<name>1000 lt Droptank</name>
+			<lbs>2204.0</lbs>
+			<gals>211</gals>
+		</opt>
+		<opt>
+			<name>AIM-9 Sidewinder</name>
+			<lbs>190.0</lbs>
+		</opt>
+		<opt>
+			<name>MK82</name>
+			<lbs>500.0</lbs>
+		</opt>
+			
+<weight n="3">
+		<name>Center</name>
+		<tank>4</tank>
+		<weight-lb>0</weight-lb>
+		<selected>none</selected>
+		<opt>
+			<name>none</name>
+			<lbs>0</lbs>
+		</opt>
+		<opt>
+			<name>1000 l Droptank</name>
+			<lbs>2204.0</lbs>
+			<gals>211</gals>
+		</opt>
+<opt>
+			<name>ADEN Cannon</name>
+			<lbs>187.392</lbs>
+			</opt>
+
+  </weight>
+	
+	<weight n="4">
+		<name>Pylon right 3</name>
+		<tank>6</tank>
+		<weight-lb>0</weight-lb>
+		<selected>none</selected>
+		<opt>
+			<name>none</name>
+			<lbs>0</lbs>
+		</opt>
+		<opt>
+			<name>1500 lt Droptank</name>
+			<lbs>2645.0</lbs>
+			<gals>396</gals>
+		</opt>
+		<opt>
+			<name>1000 lt Droptank</name>
+			<lbs>2204.0</lbs>
+			<gals>211</gals>
+		</opt>
+		<opt>
+			<name>AIM-9 Sidewinder</name>
+			<lbs>190.0</lbs>
+		</opt>
+		<opt>
+			<name>MK 82</name>
+			<lbs>500.0</lbs>
+		</opt>
+
+	</weight>
+	<weight n="5">
+		<name>Pylon right 2</name>
+		<weight-lb>0</weight-lb>
+		<selected>none</selected>
+		<opt>
+			<name>none</name>
+			<lbs>0</lbs>
+		</opt>
+		<opt>
+			<name>AIM-9 Sidewinder</name>
+			<lbs>190.0</lbs>
+		</opt>
+		<opt>
+			<name>Mk 82</name>
+			<lbs>500.0</lbs>
+		</opt>
+			</weight>
+
+	</weight>
+	<weight n="6">
+		<name>Pylon right 1</name>
+		<weight-lb>0</weight-lb>
+		<selected>none</selected>
+		<opt>
+			<name>none</name>
+			<lbs>0</lbs>
+		</opt>
+		<opt>
+			<name>AIM-9 Sidewinder</name>
+			<lbs>190.0</lbs>
+		</opt>
+		</weight>
+
+		
+ </sim>
+
+<environment>
+    <turbulence>
+      <use-cloud-turbulence>true</use-cloud-turbulence>
+    </turbulence>
+  </environment>
+
+<controls>
+	<gear>
+	<brake-parking>0</brake-parking>
+	</gear>
+	<engines>
+	<engine>
+	<throttle>0</throttle>
+	</engine>
+	</engines>
+</controls>
+
+
+<consumables>
+<fuel>
+<tank n="0">
+        <tank-num type="int">0</tank-num>
+        <level-gal_us archive="y">1350</level-gal_us>
+      </tank>
+<tank n="1">
+        <tank-num type="int">1</tank-num>
+        <level-gal_us archive="y">1100</level-gal_us>
+      </tank>
+<tank n="2">
+        <tank-num type="int">2</tank-num>
+        <level-gal_us archive="y">200</level-gal_us>
+      </tank>
+<tank n="3">
+        <tank-num type="int">3</tank-num>
+        <level-gal_us archive="y">200</level-gal_us>
+      </tank>
+
+<tank n="4">
+        <name>centerline Droptank</name>
+        <selected type="bool">false</selected>
+      </tank>
+      <tank n="5">
+        <name>left wing Droptank</name>
+        <selected type="bool">false</selected>
+      </tank>
+      <tank n="6">
+        <name>right wing Droptank</name>
+        <selected type="bool">false</selected>
+      </tank>
+    </fuel>
+
+</consumables>
+
+ <nasal>
+<Hawk>
+    	<file>Aircraft/Hawk/Nasal/hawk.nas</file>
+<file>Aircraft/Hawk/Nasal/light.nas</file>
+
+    </Hawk>
+<!-- Dual control. -->
+  <dual_control_tools>
+   <file>Aircraft/ZLT-NT/DualControl/dual-control-tools.nas</file>
+  </dual_control_tools>
+  <aircraft_dual_control>
+   <file>Aircraft/ZLT-NT/Systems/ZLT-NT-dual-control.nas</file>
+  </aircraft_dual_control>
+  <dual_control>
+   <file>Aircraft/ZLT-NT/DualControl/pilot-dual-control.nas</file>
+  </dual_control>
+  </nasal>
+
+</PropertyList>

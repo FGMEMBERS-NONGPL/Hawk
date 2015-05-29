@@ -1,0 +1,532 @@
+<?xml version="1.0"?>
+<!-- BAE Hawk -->
+
+<PropertyList>
+ <sim>
+
+  <description>BAE Hawk T2(YASim).</description>
+  <author>Daniel "Intel-Qube" Strawn, StuartC</author>
+<aircraft-version>2.0</aircraft-version>
+    <status>2.0 BETA</status>
+<instrumentation>
+			<path>Aircraft/Hawk/Systems/instrumentation.xml</path>
+		</instrumentation>
+
+
+<systems>
+      <electrical>
+        <path>Aircraft/Generic/generic-electrical.xml</path>
+      </electrical>
+      <autopilot>
+        <path>Aircraft/Hawk/systems/hawk-autopilot.xml</path>
+      </autopilot>
+    </systems>
+	
+<mp-systems>
+<radar-enabled type="bool">true</radar-enabled>
+<ecm-rwr-enabled type="bool">true</ecm-rwr-enabled>
+<combat-enabled type="bool">true</combat-enabled>
+</mp-systems>	
+	
+<model>
+<path>Aircraft/Hawk/Models/hawk.xml</path>
+</model>
+
+<!--sub models -->
+    <submodels>
+      <serviceable type="bool">3</serviceable>
+      <path>Aircraft/Hawk/Models/weapons/loads.xml</path>
+<path>Aircraft/Hawk/Models/weapons/pylons.xml</path>
+<path>Aircraft/Hawk/Models/weapons/AIM9.xml</path>
+<path>Aircraft/Hawk/Models/weapons/single-MK-82-LD.xml</path>
+<path>Aircraft/Hawk/Models/weapons/tank1500.xml</path>
+<path>Aircraft/Hawk/Models/weapons/tank1000.xml</path>
+<path>Aircraft/Hawk/Models/weapons/aden/aden.xml</path>
+<path>Aircraft/Hawk/Models/weapons/alq101.xml</path>
+
+    </submodels>
+
+<hud>
+<path>Aircraft/Hawk/Hud/default.xml</path>
+<visibility>true</visibility>
+</hud>
+
+
+ <startup>
+  <splash-texture>Aircraft/Hawk/hawk_splash.png</splash-texture> 
+  </startup>
+
+  <virtual-cockpit archive="y">false</virtual-cockpit>
+
+  <view n="0">
+   <internal archive="y">true</internal>
+   <config>
+    <x-offset-m archive="y">0</x-offset-m>
+    <y-offset-m archive="y">0.88</y-offset-m>
+    <z-offset-m archive="y">-3.35</z-offset-m>
+    <pitch-offset-deg>-14</pitch-offset-deg>
+    <default-field-of-view-deg>86.3</default-field-of-view-deg>
+   </config>
+  </view>
+  <current-view>
+    <field-of-view>60.0</field-of-view>
+  </current-view>
+
+<view n="100">
+	<name>Instructor View</name>
+	<internal archive="y">true</internal>
+	<type>lookfrom</type>
+	<config>
+		<from-model type="bool">true</from-model>
+		<from-model-idx type="int">0</from-model-idx>
+		<x-offset-m archive="y">0</x-offset-m>
+		<y-offset-m archive="y">1.35</y-offset-m>
+		<z-offset-m archive="y">-1.93</z-offset-m>
+		<pitch-offset-deg>-10</pitch-offset-deg>
+		<default-field-of-view-deg>86.3</default-field-of-view-deg>
+	</config>
+
+</view>
+
+  <flight-model>yasim</flight-model>
+  <aero>hawk-yasim</aero>
+  <fuel-fraction>1.0</fuel-fraction>
+
+  <sound>
+   <path>Aircraft/Hawk/Sounds/sound.xml</path>
+  </sound>
+
+  <panel>
+    <visibility>false</visibility>
+  </panel>
+
+<engines>
+<engine n="0">
+<running>true</running>
+</engine>
+</engines>
+
+  <aoa-indexer>
+   <too-slow-deg>15.0</too-slow-deg>
+   <slow-deg>14.0</slow-deg>
+   <fast-deg>13.0</fast-deg>
+   <too-fast-deg>12.0</too-fast-deg>
+  </aoa-indexer>
+
+  <hud>
+   <enable3d>true</enable3d>
+  </hud>
+
+  <help>
+   <title>BAE Hawk</title>
+   <key>
+     <name>Ctrl+b</name>
+     <desc>Airbrake Toggle</desc>
+   </key>
+   <line> Take off and landing speeds relate to a clean aircaft.</line>
+	<line>Take-Off:</line>
+	<line>Increase throttle to %100.
+You needn't use flaps on take off. Press CTRL-B to release the parking brake.
+Push up at 150-170kts.</line>
+	<line>Landing:</line>
+	<line>Extend flaps to first seting and reduced speed to about 140kts.
+Once you hit the run-way, reduce throttle completely,
+engage the wheel brakes and deploy the airbrake.
+</line>
+<line> Stall warnings start at 130 kts.</line>
+<line>expect issues at 120kts with complete input failure  at 90 kts </line>
+<line> MAXIMUM SAFE TAKEOFF WEIGHT - 20000 lb </line>
+<line>Exceed the Max take off weight at your own pearl.</line>
+<line>for take off at Max Payload, use 1 click of flaps and gently pull back on the stick at 160-170kt</line>
+<line> WARNING. Flying the hawk at it max payload will severely affect  performance in all areas of the envelope !!! </line> 
+
+  </help>
+
+<menubar>
+<default>
+<menu n="1000">
+<label>Hawk T2</label>
+<enabled type="bool">true</enabled>
+<item>
+<label>Select MP-pilot</label>
+<binding>
+<command>nasal</command>
+<script>dual_control_tools.copilot_dialog.show(aircraft_dual_control.pilot_type)</script>
+</binding>
+</item>
+</menu>
+</default>
+</menubar>
+
+
+<weight n="0">
+<name>pylon1.L</name>
+<weight-lb>0</weight-lb>
+<selected>none</selected>
+<opt>
+<name>none</name>
+<lbs>0</lbs>
+</opt>
+<opt>
+<name>AIM-9</name>
+<lbs>190.0</lbs>
+</opt>
+</weight>
+
+<weight n="1">
+<name>pylon2.L</name>
+<weight-lb>0</weight-lb>
+<selected>none</selected>
+<opt>
+<name>none</name>
+<lbs>0</lbs>
+</opt>
+<opt>
+<name>AIM-9</name>
+<lbs>190.0</lbs>
+</opt>
+<opt>
+<name>MK-82</name>
+<lbs>500.0</lbs>
+</opt>
+<opt>
+<name>ALQ-101 ECM pod</name>
+<lbs>335.0</lbs>
+</opt>
+
+</weight>
+
+<weight n="2">
+<name>pylon3.L</name>
+<tank>4</tank>
+<weight-lb>0</weight-lb>
+<selected>none</selected>
+<opt>
+<name>none</name>
+<lbs>0</lbs>
+</opt>
+<opt>
+<name>1500 l Droptank</name>
+<lbs>2645.0</lbs>
+<gals>396</gals>
+</opt>
+<opt>
+<name>1000 l Droptank</name>
+<lbs>2204.0</lbs>
+<gals>211</gals>
+</opt>
+<opt>
+<name>AIM-9</name>
+<lbs>190.0</lbs>
+</opt>
+<opt>
+<name>MK-82</name>
+<lbs>500.0</lbs>
+</opt>
+
+</weight>
+
+<weight n="3">
+<name>pylon.C</name>
+<tank>5</tank>
+<weight-lb>0</weight-lb>
+<selected>none</selected>
+
+<opt>
+<name>none</name>
+<lbs>0</lbs>
+</opt>
+<opt>
+<name>1000 l Droptank</name>
+<lbs>2204.0</lbs>
+<gals>211</gals>
+</opt>
+<opt>
+<name>ADEN-Cannon</name>
+<lbs>187.392</lbs>
+</opt>
+
+</weight>
+
+
+<weight n="4">
+<name>pylon3.R</name>
+<tank>6</tank>
+<weight-lb>0</weight-lb>
+<selected>none</selected>
+<opt>
+<name>none</name>
+<lbs>0</lbs>
+</opt>
+<opt>
+<name>1500 l Droptank</name>
+<lbs>2645.0</lbs>
+<gals>396</gals>
+</opt>
+<opt>
+<name>1000 l Droptank</name>
+<lbs>2204.0</lbs>
+<gals>211</gals>
+</opt>
+<opt>
+<name>AIM-9</name>
+<lbs>190.0</lbs>
+</opt>
+<opt>
+<name>MK-82</name>
+<lbs>500.0</lbs>
+</opt>
+
+</weight>
+
+<weight n="5">
+<name>pylon2.R</name>
+<weight-lb>0</weight-lb>
+<selected>none</selected>
+<opt>
+<name>none</name>
+<lbs>0</lbs>
+</opt>
+<opt>
+<name>AIM-9</name>
+<lbs>190.0</lbs>
+</opt>
+<opt>
+<name>MK-82</name>
+<lbs>500.0</lbs>
+</opt>
+<opt>
+<name>ALQ-101 ECM pod</name>
+<lbs>335.0</lbs>
+</opt>
+
+</weight>
+
+<weight n="6">
+<name>pylon1.R</name>
+<weight-lb>0</weight-lb>
+<selected>none</selected>
+<opt>
+<name>none</name>
+<lbs>0</lbs>
+</opt>
+<opt>
+<name>AIM-9</name>
+<lbs>190.0</lbs>
+</opt>
+</weight>
+
+    		
+ </sim>
+ 
+ <systems>
+<refuel>
+<type>probe</type>
+<serviceable type="bool">true</serviceable>
+</refuel>
+    </systems>
+ 
+ 
+<controls>
+<gear>
+<brake-parking type="double">1.0</brake-parking>
+</gear>
+<armament>
+			<station n="0">
+				<release type="bool">false</release>
+			</station>
+			<station n="1">
+				<release type="bool">false</release>
+			</station>
+			<station n="2">
+				<release type="bool">false</release>
+			</station>
+			<station n="3">
+				<release type="bool">false</release>
+			</station>
+			<station n="4">
+				<release type="bool">false</release>
+			</station>
+			<station n="5">
+				<release type="bool">false</release>
+			</station>
+			<station n="6">
+				<release type="bool">false</release>
+			</station>
+			
+</armament>	
+</controls>
+
+<!-- <input>
+<keyboard include="Nasal/keyboard.xml"/>
+</input>  -->
+
+
+<environment>
+    <turbulence>
+      <use-cloud-turbulence>true</use-cloud-turbulence>
+    </turbulence>
+  </environment>
+
+<controls>
+	<gear>
+	<brake-parking>0</brake-parking>
+	</gear>
+	<engines>
+	<engine>
+	<throttle>0</throttle>
+	</engine>
+	</engines>
+</controls>
+
+
+<consumables>
+<fuel>
+<tank n="0">
+        <tank-num type="int">0</tank-num>
+        <level-gal_us archive="y">1350</level-gal_us>
+      </tank>
+<tank n="1">
+        <tank-num type="int">1</tank-num>
+        <level-gal_us archive="y">1100</level-gal_us>
+      </tank>
+<tank n="2">
+        <tank-num type="int">2</tank-num>
+        <level-gal_us archive="y">200</level-gal_us>
+      </tank>
+<tank n="3">
+        <tank-num type="int">3</tank-num>
+        <level-gal_us archive="y">200</level-gal_us>
+      </tank>
+
+<tank n="4">
+        <name>left wing Droptank</name>
+        <selected type="bool">false</selected>
+      </tank>
+
+<tank n="5">
+        <name>centerline Droptank</name>
+        <selected type="bool">false</selected>
+      </tank>
+<tank n="6">
+        <name>right wing Droptank</name>
+        <selected type="bool">false</selected>
+      </tank> 
+    </fuel>
+
+</consumables>
+
+
+<instrumentation>
+
+<rwr>
+<display-lighting-intens type="double">0.4</display-lighting-intens>
+<symbology-lighting-intens type="double">1</symbology-lighting-intens>
+</rwr>
+
+<enav><selected type="int">3</selected></enav>
+<radar>
+      <range type="int" archive="y">20</range>
+      <range-factor type="double" archive="n">0.001888</range-factor>
+      <minimized type="bool" archive="y">false</minimized>
+      <selected type="int">3</selected>
+
+
+      <!-- inicio en pruebas -->
+	<enabled type="bool">true</enabled>
+	<az-field type="double">120</az-field>
+	<range type="double">150</range>
+	<range-selected type="double">50</range-selected>
+	<radar2-range type="double">150</radar2-range>
+	<display-rdr type="bool">true</display-rdr>
+	<radar-standby type="int">3</radar-standby>
+	<mode>
+	    <rws type="bool">true</rws>
+	    <tws-auto type="bool">false</tws-auto>
+	</mode>
+
+ </radar> 
+
+    <terrain-radar>
+      <hi-elev>
+        <alt-ft type="double">-9999.9</alt-ft>
+        <lat-deg type="double">-9999.9</lat-deg>
+        <lon-deg type="double">-9999.9</lon-deg>
+        <dist-m type="double">-9999.9</dist-m>
+        <collision-status type="string">initialised</collision-status>
+      </hi-elev>
+      <settings>
+        <mode type="string">extend</mode>
+        <state type="string">off</state>
+        <range-m type="double">2500</range-m>
+        <step-m type="double">250</step-m>
+        <max-climb-rate-fps type="double">120</max-climb-rate-fps>
+        <hi-elev-markers type="bool">false</hi-elev-markers>
+      </settings>
+    </terrain-radar>
+  </instrumentation>
+
+
+
+ <nasal>
+
+<doors>
+<file>Aircraft/Hawk/Nasal/doors.nas</file>
+</doors>
+
+<Hawk>
+    	<file>Aircraft/Hawk/Nasal/hawk.nas</file>
+<file>Aircraft/Hawk/Nasal/light.nas</file>
+
+    </Hawk>
+<guns>
+<file>Aircraft/Hawk/Models/Effects/guns/weapons.nas</file>
+<file>Aircraft/Hawk/Models/Effects/guns/revi.nas</file>
+</guns>
+
+<electrical>
+			<file>Aircraft/Hawk/Nasal/electrical.nas</file>
+		</electrical>
+<enav>
+      <file>Aircraft/Hawk/Nasal/enav.nas</file>
+    </enav>
+    <radar>
+      <file>Aircraft/Hawk/Instruments/mfd/radar.nas</file>
+    </radar>
+<radar2>
+		<file>Aircraft/Hawk/Instruments/mfd/radar2.nas</file>
+	</radar2>
+	<rwr>
+		<file>Aircraft/Hawk/Nasal/rwr.nas</file>
+	</rwr>
+	<radardist>
+		<file>Aircraft/Instruments-3d/radardist/radardist.nas</file>
+	</radardist>
+	
+<nav_scripts>
+			<file>Aircraft/Hawk/Nasal/nav_scripts.nas</file>
+		</nav_scripts>
+
+<xponder>
+ <file>Aircraft/Hawk/Nasal/xponder.nas</file>
+</xponder>
+
+<aar>
+<file>Aircraft/Generic/aar.nas</file>
+</aar>
+
+<!-- Dual control. -->
+  <dual_control_tools>
+   <file>Aircraft/ZLT-NT/DualControl/dual-control-tools.nas</file>
+  </dual_control_tools>
+  <aircraft_dual_control>
+   <file>Aircraft/ZLT-NT/Systems/ZLT-NT-dual-control.nas</file>
+  </aircraft_dual_control>
+  <dual_control>
+   <file>Aircraft/ZLT-NT/DualControl/pilot-dual-control.nas</file>
+  </dual_control>
+
+  </nasal>
+
+</PropertyList>
+
