@@ -306,7 +306,7 @@
 <stall>
         <name>stall</name>
         <mode>looped</mode>
-        <path>/Aircraft/Hawk/Sounds/stall.wav</path>
+        <path>Aircraft/Hawk/Sounds/stall.wav</path>
         <condition>
             <less-than>
                 <property>velocities/airspeed-kt</property>
@@ -335,7 +335,7 @@
     <stall>
         <name>stall</name>
         <mode>looped</mode>
-        <path>/Aircraft/Hawk/Sounds/stall.wav</path>
+        <path>Aircraft/Hawk/Sounds/stall.wav</path>
         <condition>
             <less-than>
                 <property>velocities/airspeed-kt</property>
@@ -363,7 +363,7 @@
     <stall>
         <name>stall</name>
         <mode>looped</mode>
-        <path>/Aircraft/Hawk/Sounds/stall.wav</path>
+        <path>Aircraft/Hawk/Sounds/stall.wav</path>
         <condition>
             <less-than>
                 <property>velocities/airspeed-kt</property>
